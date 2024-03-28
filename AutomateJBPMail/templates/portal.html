@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robo AutomateMailJbp</title>
+    <link rel="stylesheet" href="static/portal.css">
+</head>
+<body>
+    <div class="header"></div>
+    <img src="static\\Logo - Grupo Koch.png" alt="Logo da Empresa" width="250">
+    <h1>Robô AutomateMailJbp</h1>
+    <form action="/iniciar_robo" method="post" id="roboForm"> <!-- Adicionando o ID "roboForm" ao formulário -->
+        <button type="submit" id="btn-operar" name="iniciar_robo">Operar Robô</button>
+    </form>
+</body>
+<script>
+    document.getElementById("roboForm").addEventListener("submit", function(event) {
+        event.preventDefault(); 
+        // Envia uma solicitação POST para o Flask usando fetch API
+        fetch("/iniciar_robo", {
+            method: "POST"
+        })
+        .then(response => {
+            if (response.ok) {
+                // Exibe um alerta com a mensagem
+                alert("Robô iniciado com sucesso!");
+            } else {
+                alert("Falha ao iniciar o robô!");
+            }
+        })
+        .catch(error => {
+            console.error("Erro ao iniciar o robô:", error);
+            alert("Erro ao iniciar o robô!");
+        });
+    });
+</script>
+</html>
+
