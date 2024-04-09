@@ -5,8 +5,8 @@ from botcity.plugins.excel import BotExcelPlugin
 bot_excel = BotExcelPlugin()
 
 service = MS365CredentialsPlugin(
-    client_id='af7bc03b-8366-4a4e-98b0-4a3bbe488e3b',
-    client_secret='umk8Q~PSCPFcHPeU9J2dVKfFCeKNf_XNUwM2tbVM',
+    client_id='###########Secret-value###########################',
+    client_secret='###########Secret-value###########################',
 )
 scopes_list = [Scopes.BASIC, Scopes.FILES_READ_WRITE_ALL, Scopes.MAIL_READ_WRITE, Scopes.MAIL_READ_WRITE, Scopes.MAIL_SEND]
 service.authenticate(scopes=scopes_list)
